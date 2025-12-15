@@ -27,7 +27,7 @@ source:
 
 build:
   number: 0
-  skip: true  # [ppc64le or (cuda_compiler_version or "None") == "None"]
+  skip: true  # [osx]
   script:
     - mkdir -pv $PREFIX/include                    # [linux]
     - mv -v include/* $PREFIX/include              # [linux]
@@ -209,6 +209,8 @@ about:
   dev_url: https://developer.nvidia.com/nvcomp
 
 extra:
+  skip-lints:
+    - license_file_overspecified
   feedstock-name: libnvcomp
   recipe-maintainers:
     - conda-forge/cuda

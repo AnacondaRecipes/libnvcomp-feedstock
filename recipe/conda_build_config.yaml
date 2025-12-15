@@ -1,2 +1,6 @@
 arm_variant_type:          # [aarch64]
   - sbsa                   # [aarch64]
+
+cuda_compiler_version:
+  - 12.8
+  - 13.0
