@@ -79,12 +79,15 @@ outputs:
         - if not exist %LIBRARY_BIN%\nvcomp_cpu64_{{ soname }}.dll exit 1  # [win]
     about:
       license: LicenseRef-nvCOMP-Software-License-Agreement AND LicenseRef-NVIDIA-End-User-License-Agreement
+      license_family: Other
       license_file:
         - LICENSE
         - cudart_LICENSE.txt
       summary: The NVIDIA nvCOMP runtime libraries.
       description: >-
         This is a runtime package only. Developers should install libnvcomp-dev to build with nvCOMP.
+      doc_url: https://docs.nvidia.com/cuda/nvcomp/index.html
+      dev_url: https://developer.nvidia.com/nvcomp
 
   - name: libnvcomp-dev
     files:
@@ -184,16 +187,20 @@ outputs:
         - cmake --build build
     about:
       license: LicenseRef-nvCOMP-Software-License-Agreement AND LicenseRef-NVIDIA-End-User-License-Agreement
+      license_family: Other
       license_file:
         - LICENSE
         - cudart_LICENSE.txt
       summary: The NVIDIA nvCOMP static libraries.
       description: >-
         Developers should install libnvcomp-dev to build with nvCOMP shared libraries.
+      doc_url: https://docs.nvidia.com/cuda/nvcomp/index.html
+      dev_url: https://developer.nvidia.com/nvcomp
 
 about:
   home: https://developer.nvidia.com/nvcomp
   license: LicenseRef-nvCOMP-Software-License-Agreement AND LicenseRef-NVIDIA-End-User-License-Agreement
+  license_family: Other
   license_file:
     - LICENSE
     - cudart_LICENSE.txt
@@ -214,7 +221,7 @@ about:
 
 extra:
   skip-lints:
-    - license_file_overspecified
+    - deprecate_license_url
   feedstock-name: libnvcomp
   recipe-maintainers:
     - gmrrk
