@@ -49,6 +49,17 @@ requirements:
 
 outputs:
   - name: libnvcomp
+    # NOTE: This output generates SafetyErrors for changing binary sizes for nvlzcat, libnvcomp.so,
+    # and libnvcomp_cpu.so. These size differences appear to be caused by patchelf for this output
+    # differing from the original size of the binaries from the "outer" libnvcomp-split build
+    # section, along with an interaction between the other two outputs. At this time, it is unclear
+    # if this is an edge case bug in conda, or an expected behavior, but it looks like the error is
+    # safe to ignore.
+    # For future builds, we should double check that the change in the binaries is coming from the
+    # patchelf command. Download the binaries separately and run patchelf manually on them to check
+    # the change in size and change in binary contents of the files.
+    # `patchelf --force-rpath --set-rpath '$ORIGIN/.' <file>`
+    # Things to check: file size, diff <file_from_build> <manually_patched_file>
     files:
       include:
         - bin/nvlzcat  # [linux]
