@@ -83,6 +83,7 @@ outputs:
     test:
       commands:
         - test -f $PREFIX/bin/nvlzcat                                      # [linux]
+        - nvlzcat --help                                                   # [linux]
         - test -f $PREFIX/lib/libnvcomp.so                                 # [linux]
         - test -f $PREFIX/lib/libnvcomp.so.{{ soname }}                    # [linux]
         - test -f $PREFIX/lib/libnvcomp_cpu.so                             # [linux]
