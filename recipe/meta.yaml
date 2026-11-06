@@ -94,6 +94,7 @@ outputs:
       license_family: Other
       license_file:
         - LICENSE
+        - NOTICE
         - cudart_LICENSE.txt
       summary: The NVIDIA nvCOMP runtime libraries.
       description: >-
@@ -202,6 +203,7 @@ outputs:
       license_family: Other
       license_file:
         - LICENSE
+        - NOTICE
         - cudart_LICENSE.txt
       summary: The NVIDIA nvCOMP static libraries.
       description: >-
@@ -215,6 +217,7 @@ about:
   license_family: Other
   license_file:
     - LICENSE
+    - NOTICE
     - cudart_LICENSE.txt
   license_url: https://developer.download.nvidia.com/compute/nvcomp/2.3/LICENSE.txt
   summary: The NVIDIA nvCOMP development package.
